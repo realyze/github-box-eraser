@@ -1,9 +1,8 @@
 $(() => {
-  console.log("SCRIPT LOADED");
   $("body").on("click", 'button[type="submit"][data-details-container=".js-merge-pr"]', () => {
-    console.log("clicked merge button");
     const mergeBoxSelector = "form.merge-branch-form textarea#merge_message_field";
     waitForExist(mergeBoxSelector, () => {
+      console.log("Merge box found => Erasing contents...");
       $(mergeBoxSelector).text('');
     }, 1000);
   });

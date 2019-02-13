@@ -1,9 +1,10 @@
 $(() => {
-  $("body").on("click", 'button[type="submit"][data-details-container=".js-merge-pr"]', () => {
+  $("body").on("click", 'button[data-details-container=".js-merge-pr"]', () => {
     const mergeBoxSelector = "form.merge-branch-form textarea#merge_message_field";
     waitForExist(mergeBoxSelector, () => {
       console.log("Merge box found => Erasing contents...");
       $(mergeBoxSelector).text('');
+      $(mergeBoxSelector).val('');
     }, 1000);
   });
   $("body").on("click", 'button[type="submit"].js-merge-commit-button', () => {
